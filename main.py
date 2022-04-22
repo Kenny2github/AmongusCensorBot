@@ -25,6 +25,8 @@ reddit = praw.Reddit(
     refresh_token=refresh_token,
     user_agent='Amongus spoilerer by u/Kenny2reddit')
 
+print('=== Logged in on', time.strftime('%Y-%m-%d %H:%M:%S'), '===')
+
 OLD_TIME = 24 * 60 * 60 # one day
 TEXTUAL = re.compile(r'''^[-a-zA-Z0-9_'"\u2018-\u201f \u00a0\n?!:;.,()&$+=]+$''')
 FOOTER = """
