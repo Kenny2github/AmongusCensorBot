@@ -16,7 +16,14 @@ with open('credentials.txt') as f:
     client_id = f.readline().strip()
     client_secret = f.readline().strip()
     refresh_token = f.readline().strip()
-SUBREDDITS = 'AbyxDev'
+SUBREDDITS = '+'.join([
+    'AbyxDev', # This is me
+    'Dildont', # I mod this
+    'Formatwars', # Permission given by mod
+    'iwantmytimeback', # I mod this
+    'ExplainLikeImStoned', # I mod this
+    'vanaffy', # I mod this
+])
 DEBUG = '-v' in sys.argv
 
 reddit = praw.Reddit(
