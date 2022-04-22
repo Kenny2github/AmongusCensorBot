@@ -32,7 +32,7 @@ reddit = praw.Reddit(
     refresh_token=refresh_token,
     user_agent='Amongus spoilerer by u/Kenny2reddit')
 
-print('=== Logged in on', time.strftime('%Y-%m-%d %H:%M:%S'), '===')
+print('\n=== Logged in on', time.strftime('%Y-%m-%d %H:%M:%S'), '===\n', flush=True)
 
 OLD_TIME = 24 * 60 * 60 # one day
 TEXTUAL = re.compile(r'''^[-a-zA-Z0-9_'"\u2018-\u201f \u00a0\n?!:;.,()&$+=]+$''')
@@ -82,7 +82,7 @@ for comment in reddit.subreddit(SUBREDDITS).stream.comments(skip_existing=True):
     try:
         comment.reply(amongusified + FOOTER)
     except PRAWException:
-        print(' Error replying:')
+        print(' Error replying:', flush=True)
         traceback.print_exc()
     finally:
         seen[comment.submission.id] = comment.submission.created_utc
