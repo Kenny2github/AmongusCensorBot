@@ -31,6 +31,9 @@ def amongusify(text: str, spoiler: Callable[[str], str] = reddit_spoiler) -> str
     >>> text = 'Are you smelting ore on Good Friday with us?'
     >>> amongusify(text)
     'A>!re you s!<m>!elting !<o>!re o!<n>! !<G>!ood!< >!Friday with !<us>!?!<'
+    >>> text = 'That person in the pic has some dirty thumbs'
+    >>> amongusify(text)
+    '>!That per!<s>!on in the pic has some dirty th!<u>!mb!<s'
     """
     # spoilers can't span multiple lines
     if '\n' in text:
@@ -40,6 +43,7 @@ def amongusify(text: str, spoiler: Callable[[str], str] = reddit_spoiler) -> str
     # if they don't our job is much harder anyway
     spoilered = spoiler(NIMS)
     ending = spoilered[spoilered.index(NIMS) + len(NIMS):]
+    del spoilered
     # Store processed text so that we don't double-spoiler stuff
     processed = ''
     while text:
@@ -55,7 +59,7 @@ def amongusify(text: str, spoiler: Callable[[str], str] = reddit_spoiler) -> str
         else:
             left, sep, text = text.rpartition(ending)
             if sep:  # tag found, text has already been updated
-                processed += left + sep
+                processed += left + sep + text
             else:
                 processed, text = text, ''
             break
