@@ -22,6 +22,7 @@ SUBREDDITS = '+'.join([
     'Formatwars', # Permission given by mod
     'iwantmytimeback', # I mod this
     'ExplainLikeImStoned', # I mod this
+    'SongTitleStories', # I mod this
     'vanaffy', # I mod this
 ])
 DEBUG = '-v' in sys.argv
