@@ -19,9 +19,10 @@ with open('credentials.txt') as f:
 SUBREDDITS = '+'.join([
     'AbyxDev', # This is me
     'Dildont', # I mod this
+    'ExplainLikeImStoned', # I mod this
     'Formatwars', # Permission given by mod
     'iwantmytimeback', # I mod this
-    'ExplainLikeImStoned', # I mod this
+    'OnionRings', # Permission given by mod
     'SongTitleStories', # I mod this
     'vanaffy', # I mod this
 ])
